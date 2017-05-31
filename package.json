@@ -1,0 +1,16 @@
+{
+  "name": "bachelorarbeit",
+  "version": "1.0.0",
+  "description": "graphical implementations of path finding algorithms",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lodash": "^4.17.4",
+    "@types/lodash": "^4.14.64",
+    "typescript": "^2.3.3"
+  }
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <canvas id="path-wrapper"></canvas>
+    <div class="controls">
+      <i class="fa fa-pause" aria-hidden="true" id="pause"></i>
+      <i class="fa fa-play disabled" aria-hidden="true" id="play"></i>
+      <i class="fa fa-forward disabled" aria-hidden="true" id="fast-forward"></i>
+    </div>
+</body>
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/libs/require.js"></script>
+<script>
+  require.config({
+    baseUrl: "./",
+    paths: {
+        "lodash": "./node_modules/lodash/lodash.min"
+    }
+  });
+  require( ["js/main.js"]);
+</script>
+</html>
