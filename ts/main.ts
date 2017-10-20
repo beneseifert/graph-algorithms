@@ -11,10 +11,8 @@ TODO:
 - implement better data structure for open list
 - add unit tests
 - make UI class
-- make the graph with a gradient
 - make start and target arbitrary in config
 - load obstacles from image
-- refresh obstacle drawing to fix graphic bug with lines over obstacles
 - make more UI components (going backwards, jump to end/beginning), alter config params from UI
 - implement Dijkstra
 - implement D*
@@ -47,6 +45,7 @@ let loop = function(): any {
             loop();
         }, Config.timeBetweenIterations);
     } else {
+        graph.drawGrid();
         aStar.drawLists();
         aStar.drawPath(drawableAStar.result);
         console.log(drawableAStar.result);

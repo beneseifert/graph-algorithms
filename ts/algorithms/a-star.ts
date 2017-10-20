@@ -28,9 +28,9 @@ export class AStar {
         }
         this.closedList.push(currEdge);
         this.expandEdge(currEdge);
+        this.graph.drawGrid();
         this.drawLists();
         this.drawPath(this.constructPath(currEdge));
-        this.graph.drawEdge(currEdge, Color.ORANGE);
         return null;
     }
 
@@ -67,7 +67,7 @@ export class AStar {
             if (this.closedListContains(currNeighbor)) {
                 continue;
             }
-            let currentG = edge.getPreviousEdge() !== null ? edge.getPreviousEdge().getFValue() : 0,
+            let currentG = edge.getPreviousEdge() !== null ? edge.getPreviousEdge().getGValue() : 0,
                 tentativeG = currentG + currNeighbor.computeDistance(edge);
             if (currNeighbor.getGValue() !== null && tentativeG >= currNeighbor.getGValue()) {
                 continue;
@@ -108,10 +108,12 @@ export class AStar {
     }
 
     public drawPath(path: Array<Edge>): void {
+        let currColor: Color = Color.LIGHTBLUE;
         for (let i in path) {
+            currColor = currColor.nextColorForGradient();
             let currEdge: Edge = path[i];
             if (currEdge.getPreviousEdge()) {
-                this.graph.drawLineBetweenEdges(currEdge, currEdge.getPreviousEdge(), Color.RED);
+                this.graph.drawLineBetweenEdges(currEdge, currEdge.getPreviousEdge(), currColor);
             }
         }
     }

@@ -40,6 +40,12 @@ export class Graph {
         }
     }
 
+    public drawGrid(): void {
+        this.edges.forEach((edge: Edge) => {
+            this.drawEdge(edge);
+        });
+    }
+
     public forEachEdge(fun: (edge: Edge) => void):void {
         for (let i in this.edges) {
             let currEdge: Edge = this.edges[i];
